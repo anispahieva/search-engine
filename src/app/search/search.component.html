@@ -1,0 +1,14 @@
+<div fxLayout="column" fxLayoutGap="30px" fxLayoutAlign="space-evenly start"  style="margin-left: 55px;margin-bottom: 30px;"> 
+    <div class="card" fxLayout="row" fxLayoutGap="20px" >
+       <app-home (newQueryEvent)="searchQuery($event)"></app-home>
+        <div class="result">   
+              <mat-card class ="result" *ngFor= 'let result of results$' style="padding-bottom: 20px;border-radius: 15px; background: whitesmoke;">
+                  <div  style="padding: 0% 0% 0% 0%;">
+                        <h1>{{result.title}}</h1>
+                        <p>{{result.extract}}</p>
+
+                  </div>
+                </mat-card>
+          </div>
+    </div> 
+</div>
