@@ -14,7 +14,7 @@ export class AppComponent implements OnInit{
 
   navLinks = [
     {path: 'search', label: 'Search'},
-    {path: 'top-searched', label: 'All topics'}
+    //{path: 'top-searched', label: 'All topics'}
   ];
 
   constructor(private dataservice : SearchService){

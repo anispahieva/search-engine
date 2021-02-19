@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   //@Input() query: string;
-  @Output() newQueryEvent = new EventEmitter<String>();
+  @Output() newQueryEvent = new EventEmitter<string>();
 
   searchNewQuery(value: string) {
     this.newQueryEvent.emit(value);

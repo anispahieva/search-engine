@@ -2,11 +2,16 @@
     <div class="card" fxLayout="row" fxLayoutGap="20px" >
        <app-home (newQueryEvent)="searchQuery($event)"></app-home>
         <div class="result">   
-              <mat-card class ="result" *ngFor= 'let result of results$' style="padding-bottom: 20px;border-radius: 15px; background: whitesmoke;">
+              <mat-card class ="result" *ngFor= 'let result of results$' style="padding-bottom: 20px;border-radius: 15px; background: rgb(236, 240, 255);">
                   <div  style="padding: 0% 0% 0% 0%;">
-                        <h1>{{result.title}}</h1>
-                        <p>{{result.extract}}</p>
+                        <h1 style="font-size: 22px"><b>{{result.title}}</b></h1>
+                        <div *ngFor='let image of result.images' >
+                              <img src={{image}} alt='image' style="width:128px">
+                        </div>
+                        <p style="font-size: 16px;">{{result.extract}}</p>
+                        <p>{{result.score}}</p>
 
+                        <button (click)="onClickButton(result.title)"mat-button class="btn" style="display:inline-block">Mark as relevant</button>
                   </div>
                 </mat-card>
           </div>
